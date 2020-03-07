@@ -8,6 +8,8 @@ Created on Sat Mar  7 23:18:18 2020
 #Import libraries
 import string
 import nltk
+nltk.download('stopwords')
+
 from nltk.corpus import stopwords
 import pandas as pd
 
