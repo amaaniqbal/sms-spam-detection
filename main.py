@@ -24,9 +24,8 @@ def processText(message) :
         2. Remove stopwords
         3. Returns the list of clean text words
     """
-    
     noPunctuation = [char for char in message if char not in string.punctuation]
-    noPunctuation = ''.join(noPunctuation)   #Joins all the character in character array returned in the previous statament
+    noPunctuation = ''.join(noPunctuation)   #Join all the character in character array returned in the previous statament
     tokenizedMessage = [word for word in noPunctuation.split() if word.lower() not in stopwords.words('english')]
     return tokenizedMessage
 
@@ -34,8 +33,8 @@ def processText(message) :
 from sklearn.model_selection import train_test_split
 msg_train, msg_test, label_train, label_test = train_test_split(messages['Message'], messages['Label'], test_size=0.2)
 
-#Procedure 2 (Pipeline)
 
+#Create Pipeline
 #Importing pipeline 
 from sklearn.pipeline import Pipeline
 
@@ -44,7 +43,7 @@ from sklearn.pipeline import Pipeline
 pipeline = Pipeline([
         ('bow', CountVectorizer(analyzer=processText)),    # strings to token integer counts
         ('tfidf', TfidfTransformer()),                     # integer counts to weighted TF-IDF scores
-        ('classifier', MLPClassifier())                    # train on TF-IDF vectors with Naive Bayes classifier
+        ('classifier', MLPClassifier())                    # train on TF-IDF vectors with MLP classifier
     ])
 
 #Fitting using pipeline
