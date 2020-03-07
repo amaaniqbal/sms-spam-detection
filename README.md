@@ -10,7 +10,7 @@ A high level view of the system is as follows:
 - Create pipeline
   - Construct Bag of Words
   - Compute tf-idf scores
-  - Define MLP Classifier
+  - Instantiate MLP Classifier
 - Fit the pipeline on the training set
 - Test the pipeline on the test set
 - Print the results
