@@ -14,10 +14,7 @@ import pandas as pd
 #Import libraries for performing NLP
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
 from sklearn.neural_network import MLPClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
 
 #Read CSV
 messages = pd.read_csv('dataset/SMSSpamCollection', sep='\t', names=['Label', 'Message'])
