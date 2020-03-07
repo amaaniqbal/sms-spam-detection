@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Mar  7 23:18:18 2020
-
-@author: Amaan Iqbal
-"""
-
 #Import libraries
 import string
 import nltk
