@@ -20,7 +20,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 
 #Read CSV
-messages = pd.read_csv('dataset\SMSSpamCollection', sep='\t', names=['Label', 'Message'])
+messages = pd.read_csv('dataset/SMSSpamCollection', sep='\t', names=['Label', 'Message'])
 
 #Text Processing
 #Tokenization
