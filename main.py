@@ -1,4 +1,8 @@
+#Display message
+print ("Importing Libraries...")
+
 #Import libraries
+import sys
 import string
 import nltk
 nltk.download('stopwords')
@@ -10,9 +14,20 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.neural_network import MLPClassifier
+from sklearn.pipeline import Pipeline
+from sklearn.metrics import confusion_matrix
+
+#Display message
+print ("All libraries imported...")
+
+#Display message
+print ("Reading the dataset...")
 
 #Read CSV
 messages = pd.read_csv('dataset/SMSSpamCollection', sep='\t', names=['Label', 'Message'])
+
+#Display message
+print ("Dataset read successfully...")
 
 #Text Processing
 #Tokenization
@@ -34,11 +49,11 @@ from sklearn.model_selection import train_test_split
 msg_train, msg_test, label_train, label_test = train_test_split(messages['Message'], messages['Label'], test_size=0.2)
 
 
-#Create Pipeline
-#Importing pipeline 
-from sklearn.pipeline import Pipeline
+#Display message
+print ("Started creating pipeling...")
 
 #TRAINING
+#Create Pipeline
 #Both training and testing data will pass through our created pipeline sequentially
 pipeline = Pipeline([
         ('bow', CountVectorizer(analyzer=processText)),    # strings to token integer counts
@@ -46,15 +61,54 @@ pipeline = Pipeline([
         ('classifier', MLPClassifier())                    # train on TF-IDF vectors with MLP classifier
     ])
 
+#Display message
+print ("Pipeline created successfully...")
+
+ 
+#Display message
+print ("Fitting the pipeline...")
+
 #Fitting using pipeline
 pipeline.fit(msg_train, label_train)
 
-
-#TESTING
-#Predicting using pipeline
-predictions = pipeline.predict(msg_test)
+#Display message
+print ("Pipeline fitted successfully...")
 
 
-#PRINTING RESULTS
-from sklearn.metrics import confusion_matrix
-print(confusion_matrix(label_test, predictions))
+#Display message
+print ("Predicting the results...")
+
+argumentsList = sys.argv
+
+if len(argumentsList) == 1 :
+    #TESTING
+    #Predicting using pipeline
+    predictions = pipeline.predict(msg_test)
+    
+    #Display message
+    print ("Results predicted...")
+    
+    
+    #Display message
+    print ("Displaying results...")
+    print ("Confusion Matrix :")
+    
+    
+    #PRINTING RESULTS
+    print(confusion_matrix(label_test, predictions))
+
+else :
+    # Extract the message
+    message = " ".join(sys.argv[1:])
+    
+    #TESTING
+    #Predicting using pipeline
+    prediction = pipeline.predict(pd.Series(message))
+    
+    #Display message
+    print ("Results predicted...")
+    
+    #Display message
+    print ("Displaying results...\n")
+    print ("Input Message is a ", prediction)
+    
