@@ -16,6 +16,15 @@ A high level view of the system is as follows:
 - Print the results
 
 
+## Usage
+Run the file `main.py` without any command line arguments to view the classifier performance on the available test set. In order to test on the custom input, run the following command:
+
+```
+python main.py "Custom input string goes here"
+```
+
+In the command, custom input string can also be specified without quotes.
+
 ## Example Workflow
 ```
 name: SMS Spam Detection Action
@@ -48,3 +57,7 @@ jobs:
       run: |
         python main.py
 ```
+
+
+## Contributing
+Please feel free to create an issue if you find a bug or send a pull request if you wish to improve the existing code/add a new feature. 
