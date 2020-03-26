@@ -1,5 +1,11 @@
 name: SMS Spam Detection Action
 
+description: 'SMS Spam Detection Action enables a user to check if any given message is a `spam` or a `ham`'
+
+branding:
+  icon: 'activity'
+  color: 'green'
+
 on:
   push:
     branches: [ master ]
