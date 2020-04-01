@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 echo "Running Spam Check on '${inputs.message}'"
 python main.py ${inputs.message}
