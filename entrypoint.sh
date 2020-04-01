@@ -1,5 +1,5 @@
 #!/bin/sh
 
-echo "Running Spam Check on '${inputs.message}'"
+echo "Running Spam Check on ${inputs.message}"
 python main.py ${inputs.message}
 echo "Spam Check Finished!"
