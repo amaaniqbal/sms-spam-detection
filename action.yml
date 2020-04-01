@@ -7,7 +7,7 @@ branding:
 inputs:
   message:
     description: 'Message to be checked for spam'
-    required: false
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
