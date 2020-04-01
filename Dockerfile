@@ -14,6 +14,7 @@ RUN pip install nltk
 RUN pip install pandas
 RUN pip install sklearn
 
+COPY dataset/SMSSpamCollection /usr/bin/dataset/SMSSpamCollection
 COPY main.py /usr/bin/main.py
 COPY entrypoint.sh /entrypoint.sh
 
