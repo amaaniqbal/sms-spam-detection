@@ -41,7 +41,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: SMS Spam Detection Action
-      uses: amaaniqbal/sms-spam-detection@v1.18
+      uses: amaaniqbal/sms-spam-detection@v1.21
       with:
         # Message to be checked for spam
         message: "input message to be tested goes here..."
