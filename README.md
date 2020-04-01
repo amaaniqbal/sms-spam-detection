@@ -16,16 +16,6 @@ A high level view of the system is as follows:
 - Print the results
 
 
-## Usage
-Run the file `main.py` without any command line arguments to view the classifier performance on the available test set. In order to test on the custom input, run the following command:
-
-```
-python main.py "Custom input string goes here"
-```
-
-In the command, custom input string can also be specified without quotes.
-
-
 ## Action Usage
 To use this action in your repository, create a file like `.github/workflows/spam_detect.yml` with the following content:
 ```
@@ -46,6 +36,16 @@ jobs:
         # Message to be checked for spam
         message: "input message to be tested goes here..."
 ```
+
+
+## Script Usage
+Run the file `main.py` without any command line arguments to view the classifier performance on the available test set. In order to test on the custom input, run the following command:
+
+```
+python main.py "Custom input string goes here"
+```
+
+In the command, custom input string can also be specified without quotes.
 
 
 ## Contributing
