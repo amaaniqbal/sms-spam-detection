@@ -14,9 +14,9 @@ RUN pip install nltk
 RUN pip install pandas
 RUN pip install sklearn
 
+COPY main.py /main.py
 COPY entrypoint.sh /entrypoint.sh
 
-RUN pwd
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
