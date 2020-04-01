@@ -25,38 +25,28 @@ python main.py "Custom input string goes here"
 
 In the command, custom input string can also be specified without quotes.
 
-## Example Workflow
-```
-name: SMS Spam Detection Action
 
+## Action Usage
+To use this action in your repository, create a file like .github/workflows/spam_detect.yml with the following content:
+```
+name: Spam Detection Action
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.5, 3.6, 3.7, 3.8]
-
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+    - name: SMS Spam Detection Action
+      uses: amaaniqbal/sms-spam-detection@v1.10
       with:
-        python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-    - name: Run the classifier
-      run: |
-        python main.py
+        # Message to be checked for spam
+        message: "input message to be tested goes here..."
 ```
+You can remove the `with` section completely if you just wish to see the classifier performance.
 
 
 ## Contributing
