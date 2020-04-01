@@ -7,7 +7,7 @@ LABEL "com.github.actions.color"="green"
 LABEL "repository"="https://github.com/amaaniqbal/sms-spam-detection"
 LABEL "homepage"="https://github.com/amaaniqbal/sms-spam-detection"
 LABEL "maintainer"="Amaan Iqbal <amaaniqbal2786@gmail.com>"
-LABEL "version" = "1.x"
+LABEL "version" = "1.21"
 
 RUN pip install --upgrade pip
 RUN pip install nltk
