@@ -46,7 +46,6 @@ jobs:
         # Message to be checked for spam
         message: "input message to be tested goes here..."
 ```
-You can remove the `with` section completely if you just wish to see the classifier performance.
 
 
 ## Contributing
