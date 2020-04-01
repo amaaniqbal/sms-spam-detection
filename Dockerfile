@@ -1,4 +1,4 @@
-FROM python:3
+FROM jfloff/alpine-python
 
 LABEL "com.github.actions.name"="SMS Spam Detection Action"
 LABEL "com.github.actions.description"="SMS Spam Detection Action enables a user to check if any given message is a `spam` or a `ham`"
@@ -16,6 +16,6 @@ RUN pip install sklearn
 
 COPY entrypoint.sh /entrypoint.sh
 
-RUN chmod +x /entrypoint.sh
+RUN pwd
 
 ENTRYPOINT ["/entrypoint.sh"]
