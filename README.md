@@ -27,7 +27,7 @@ In the command, custom input string can also be specified without quotes.
 
 
 ## Action Usage
-To use this action in your repository, create a file like .github/workflows/spam_detect.yml with the following content:
+To use this action in your repository, create a file like `.github/workflows/spam_detect.yml` with the following content:
 ```
 name: Spam Detection Action
 on:
